@@ -10051,11 +10051,15 @@
             }
         }
 
+        let luxe = document.getElementById('luxe');
+        luxe.style.display = 'none';
+
         var callback = function(mutationsList, observer){
             for(var mutation of mutationsList){
                 if(mutation.type === 'attributes'){
                     //console.log('The ' + mutation.attributeName + ' attribute was modified.');
 
+                    luxe.style.display = 'block';
 
                     OtherImagesDisplay();
                     observer.disconnect();
@@ -10185,10 +10189,9 @@
 
     });
 
+
+
 </script>
-
-
-
 
 
 
