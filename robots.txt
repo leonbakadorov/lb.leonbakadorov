@@ -1,4 +1,6 @@
-# robots.txt for http://www.leonbakadorov.com/
+# robots.txt for https://www.leonbakadorov.com/
 
 User-agent: *
 Allow: /
+
+Sitemap: https://www.leonbakadorov.com/sitemap.xml
