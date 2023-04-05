@@ -1,4 +1,4 @@
 # robots.txt for http://www.leonbakadorov.com/
 
 User-agent: *
-Allow:
+Allow: /
