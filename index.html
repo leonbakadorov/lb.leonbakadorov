@@ -1195,69 +1195,11 @@
 
 
 
-    /*
-
-    .navigation.bods {
-        background: rgba(255,255,255,.72);
-        transition: background .3s ease-out 0s;
-    }
-
-    .navigation.bods .menu-line-item {
-        background: #000;
-    }
-
-    .navigation.bods .navigation-item-link.leonbakadorov {
-        background-image: url(/css/nav/leonbakadorov-small_black.svg);
-    }
-    .navigation-item-link.lb {
-        background-image: url(/css/nav/lb-small_black.svg);
-    }
-
-    #navigation-state:checked ~ .navigation.bods .navigation-item-link.leonbakadorov {
-        background-image: url(/css/nav/leonbakadorov-small.svg);
-    }
-    #navigation-state:checked ~ .navigation.bods .navigation-item-link.lb {
-        background-image: url(/css/nav/lb-small.svg);
-    }
-
-    #navigation-state:checked ~ .navigation.bods .menu-line-item {
-        background: #fff;
-    }
-
-    @media (min-width: 1065px) {
-        .navigation.bods .navigation-item-link.leonbakadorov {
-            background-image: url(/css/nav/leonbakadorov-large_black.svg);
-        }
-        .navigation.bods .navigation-item-link.lb {
-            background-image: url(/css/nav/lb-large_black.svg);
-        }
-
-        #navigation-state:checked ~ .navigation.bods .navigation-item-link.leonbakadorov {
-            background-image: url(/css/nav/leonbakadorov-large.svg);
-        }
-        #navigation-state:checked ~ .navigation.bods .navigation-item-link.lb {
-            background-image: url(/css/nav/lb-large.svg);
-        }
-    }
-
-*/
-
-
-
     .navigation.brilliant {
         background: rgba(0,0,0,.01);
         box-shadow: 0 0.5px 0 rgba(235,235,245,.2);
         backdrop-filter: blur(34px) saturate(180%);
         -webkit-backdrop-filter: blur(34px) saturate(180%);
-    }
-    .navigation-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 48px;
-
-        z-index: 1;
     }
     .navigation-header{
         text-align: center;
@@ -1354,20 +1296,31 @@
     .menu-line-item{
         display: block;
         position: absolute;
-        width: 21px;
-        height: 2.1px;
-        border-radius: 0px;
-        background: #fff;
+        width: 30px;
+        height: 30px;
         z-index: 1;
-        left: 4.5px;
+        top: 0;
+        left: 0;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
 
         transition: transform .2806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1s;
     }
     .menu-line-item-top{
-        top: 10px;
+        background-image: url(/css/nav/menu-line-top-small_white.svg);
     }
     .menu-line-item-bottom{
-        bottom: 10px;
+        background-image: url(/css/nav/menu-line-bottom-small_white.svg);
+    }
+
+    @media (min-width: 1065px) {
+        .menu-line-item-top{
+            background-image: url(/css/nav/menu-line-top-large_white.svg);
+        }
+        .menu-line-item-bottom{
+            background-image: url(/css/nav/menu-line-bottom-large_white.svg);
+        }
     }
 
     #navigation-state:checked ~ .navigation {
@@ -1404,17 +1357,6 @@
 
 
     @media (max-width: 1065px) {
-        .menu-line-item{
-            width: 23px;
-            height: 2.3px;
-            left: 3.5px;
-        }
-        .menu-line-item-top{
-            top: 9.5px;
-        }
-        .menu-line-item-bottom{
-            bottom: 9.5px;
-        }
 
         #navigation-state:checked ~ .navigation .menu-line-item-top{
             transform: translateY(4.35px);
