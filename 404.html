@@ -23,24 +23,13 @@
         --cubic: cubic-bezier(0.77, 0, 0.175, 1);
         transition: height .3s var(--cubic) .2s, background .5s ease-out .1s, box-shadow .4s ease-out, -webkit-backdrop-filter .4s ease-out, backdrop-filter .4s ease-out;
 
-        background: rgba(0,0,0,.76);
+        background: rgba(255,255,255,.76);
         box-shadow: 0 0.5px 0 rgba(235,235,245,0.05);
         backdrop-filter: blur(34px) saturate(140%);
         -webkit-backdrop-filter: blur(34px) saturate(140%);
 
     }
 
-
-
-    .navigation-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 48px;
-
-        z-index: 1;
-    }
     .navigation-header{
         text-align: center;
         position: relative;
@@ -82,13 +71,13 @@
         outline-offset: -7px;
     }
     .navigation-item-link.leonbakadorov {
-        background-image: url(/css/nav/leonbakadorov-small.svg);
+        background-image: url(/css/nav/leonbakadorov-small_black.svg);
         background-size: 232px 48px;
         width: 232px;
     }
     .navigation-item-link.lb {
 
-        background-image: url(/css/nav/lb-small.svg);
+        background-image: url(/css/nav/lb-small_black.svg);
         background-size: 48px 48px;
         width: 48px;
     }
@@ -139,7 +128,7 @@
         width: 21px;
         height: 2.1px;
         border-radius: 0px;
-        background: #fff;
+        background: #000;
         z-index: 1;
         left: 4.5px;
 
@@ -154,7 +143,7 @@
 
     #navigation-state:checked ~ .navigation {
         height: 100%;
-        background: rgba(0,0,0,1);
+        background: rgba(255,255,255,1);
         transition: height .5s var(--cubic) .1s, background .3s ease-out .0s, backdrop-filter 0s .3s;
     }
 
@@ -209,6 +198,7 @@
 
 
     .navigation-list{
+        list-style: none;
         padding: 104px 52px 8px;
         /*max-width: 664px;*/
         margin: 0 auto;
@@ -245,71 +235,8 @@
     .navigation-list-item:last-child{
         border-bottom: none;
     }
-    /*.navigation-list-item:nth-child(1) {
-        transition-delay: 0.56s;
-    }
-    .navigation-list-item:nth-child(2) {
-        transition-delay: 0.49s;
-    }
-    .navigation-list-item:nth-child(3) {
-        transition-delay: 0.42s;
-    }
-    .navigation-list-item:nth-child(4) {
-        transition-delay: 0.35s;
-    }
-    .navigation-list-item:nth-child(5) {
-        transition-delay: 0.28s;
-    }
-    .navigation-list-item:nth-child(6) {
-        transition-delay: 0.21s;
-    }
-    .navigation-list-item:nth-child(7) {
-        transition-delay: 0.14s;
-    }
-    .navigation-list-item:nth-child(8) {
-        transition-delay: 0.07s;
-    }*/
 
 
-
-    /*#navigation-state:checked ~ .navigation .navigation-list-item:first-child {
-        transition-delay: 0.2s;
-    }
-    #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(2) {
-        transition-delay: 0.27s;
-    }
-    #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(3) {
-        transition-delay: 0.34s;
-    }
-    #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(4) {
-        transition-delay: 0.41s;
-    }
-    #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(5) {
-        transition-delay: 0.48s;
-    }
-    #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(6) {
-        transition-delay: 0.55s;
-    }
-    #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(7) {
-        transition-delay: 0.62s;
-    }
-    #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(8) {
-        transition-delay: 0.69s;
-    }*/
-
-
-
-    /*.navigation-list-header{
-        user-select: none;
-        color: rgba(235,235,245,1);
-        !*letter-spacing: .01em;*!
-        text-decoration: none;
-        font-size: 17px;
-        line-height: 1.4;
-        margin-bottom: 11px;
-        opacity: 0;
-        transition: opacity .5s ease-out;
-    }*/
     .navigation-list-link, .navigation-list-header{
         display: inline-block;
         line-height: 1;
@@ -469,13 +396,13 @@
             left: 7px;
         }
         .navigation-item-link.leonbakadorov {
-            background-image: url(/css/nav/leonbakadorov-large.svg);
+            background-image: url(/css/nav/leonbakadorov-large_black.svg);
             background-size: 212px 44px;
             width: 212px;
         }
         .navigation-item-link.lb {
 
-            background-image: url(/css/nav/lb-large.svg);
+            background-image: url(/css/nav/lb-large_black.svg);
             background-size: 44px 44px;
             width: 44px;
         }
@@ -486,7 +413,7 @@
         transition: opacity 200ms ease;
         display: inline-block;
         position: relative;
-        color: #fff;
+        color: #000;
         letter-spacing: -.01em;
         text-decoration: none;
         font-size: 46px;
