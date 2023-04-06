@@ -644,6 +644,62 @@
 </script>
 
 <style>
+
+    html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .discover {
+        position: absolute;
+        top: 68px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto 52px;
+        box-sizing: border-box;
+    }
+    @media (max-width: 735px) {
+        .discover {
+            display: none;
+        }
+    }
+    .discover-link {
+        text-decoration: none;
+        padding: 12px;
+        line-height: 1;
+        font-size: 14px;
+        letter-spacing: .015em;
+        color: #5A5A5C;
+        white-space: nowrap;
+        opacity: .48;
+        transition: opacity .32s cubic-bezier(.4,0,.6,1);
+    }
+    .discover-link.cta {
+        opacity: .8;
+        color: #0088FF;
+    }
+    .discover-link:hover {
+        opacity: 1;
+    }
+
+</style>
+
+<nav class="discover">
+    <a href="/service/" class="discover-link cta">Заказать</a>
+    <a href="/website/" class="discover-link">Веб-сайт</a>
+    <a href="/branding/" class="discover-link">Брендинг</a>
+    <a href="/app/" class="discover-link">Приложение</a>
+    <a href="/promotion/" class="discover-link">Продвижение</a>
+    <a href="/design/" class="discover-link">Product UX/UI</a>
+    <a href="/publications/" class="discover-link">Публикации</a>
+    <a href="/contact/" class="discover-link">Контакты</a>
+</nav>
+
+<style>
     @font-face {
         font-family:'Leon Bakadorov Sans';
         src: url('/css/font/leon-bakadorov-sans.woff2') format('woff2');
@@ -674,6 +730,8 @@
         flex-direction: column;
         width: 100vw;
         height: 100vh;
+        padding-top: 12px;
+        box-sizing: border-box;
     }
     .headline {
         font-size: 46px;
@@ -682,7 +740,7 @@
         max-width: 576px;
         padding: 40px;
     }
-    .cta {
+    .cta-home {
         color: #fff;
         padding: 12px 24px;
         border-radius: 100px;
@@ -693,14 +751,14 @@
         cursor: pointer;
     }
     @media (max-width: 1065px) {
-        .cta {
+        .cta-home {
             font-size: 19px;
         }
     }
 </style>
 
 <h1 class="headline">Страница, которую вы ищете, не&nbsp;найдена.</h1>
-<a href="/" class="cta">Перейти на главную</a>
+<a href="/" class="cta-home">Перейти на главную</a>
 
 
 
