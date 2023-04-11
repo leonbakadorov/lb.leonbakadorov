@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://www.leonbakadorov.com/contact/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Контакты — Leon Bakadorov LB</title>
+
+    <meta name="description" content="Свяжитесь с Leon Bakadorov LB">
+    <meta name="twitter:image" content="/img/leonbakadorov_social.png">
+    <meta name="twitter:title" content="Контакты — Официальный сайт">
+    <meta property="og:description" content="Свяжитесь с Leon Bakadorov LB">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Контакты — Leon Bakadorov LB">
+    <meta property="og:image" content="/img/leonbakadorov_social.png">
+</head>
+<body>
+
+<style>
+    #navigation-state {
+        display: none;
+    }
+
+    .navigation{
+        display: block;
+        width: 100%;
+        min-width: 320px;
+        overflow: hidden;
+        height: 48px;
+        position: fixed;
+        top: 0;
+        z-index: 9999999;
+        --cubic: cubic-bezier(0.77, 0, 0.175, 1);
+        transition: height .3s var(--cubic) .2s, background .5s ease-out .1s, box-shadow .4s ease-out, -webkit-backdrop-filter .4s ease-out, backdrop-filter .4s ease-out;
+
+        background: rgba(255,255,255,.76);
+        box-shadow: 0 0.5px 0 rgba(235,235,245,0.05);
+        backdrop-filter: blur(34px) saturate(140%);
+        -webkit-backdrop-filter: blur(34px) saturate(140%);
+
+    }
+
+    .navigation-header{
+        text-align: center;
+        position: relative;
+        z-index: 50;
+    }
+    .navigation-item{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        height: 48px;
+        z-index: 10;
+    }
+    .navigation-item.left{
+        left: 0;
+    }
+    .navigation-item.center{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .navigation-item.right{
+        right: 0;
+    }
+
+
+
+    .navigation-item-link{
+        height: 48px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        box-sizing: content-box;
+        background-repeat: no-repeat;
+        background-position: center center;
+        text-decoration: none;
+        white-space: nowrap;
+        -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        -webkit-tap-highlight-color: transparent;
+        outline-offset: -7px;
+    }
+    .navigation-item-link.leonbakadorov {
+        background-image: url(/css/nav/leonbakadorov-small_black.svg);
+        background-size: 232px 48px;
+        width: 232px;
+    }
+    .navigation-item-link.lb {
+
+        background-image: url(/css/nav/lb-small_black.svg);
+        background-size: 48px 48px;
+        width: 48px;
+    }
+    .navigation-text {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+        -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+        clip-path: inset(0px 0px 99.9% 99.9%);
+        overflow: hidden;
+        height: 1px;
+        width: 1px;
+        padding: 0;
+        border: 0;
+        top: 50%;
+    }
+
+
+
+    /* *********************************************** */
+    .navigation-menu{
+        width: 48px;
+        height: 48px;
+        position: relative;
+        display: block;
+        -webkit-tap-highlight-color: transparent;
+        z-index: 20;
+        cursor: pointer;
+    }
+    .menu-container {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 9px;
+        left: 9px;
+        transition: transform .2806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .05s;
+    }
+    .menu-line{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: transform .2806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1s;
+    }
+    /*.menu-line-item{
+        display: block;
+        position: absolute;
+        width: 21px;
+        height: 2.1px;
+        border-radius: 0px;
+        background: #000;
+        z-index: 1;
+        left: 4.5px;
+
+        transition: transform .2806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1s;
+    }*/
+
+    .menu-line-item{
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+
+        transition: transform .2806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1s;
+    }
+    .menu-line-item-top{
+        background-image: url(/css/nav/menu-line-top-small_black.svg);
+    }
+    .menu-line-item-bottom{
+        background-image: url(/css/nav/menu-line-bottom-small_black.svg);
+    }
+
+    @media (min-width: 1065px) {
+        .menu-line-item-top{
+            background-image: url(/css/nav/menu-line-top-large_black.svg);
+        }
+        .menu-line-item-bottom{
+            background-image: url(/css/nav/menu-line-bottom-large_black.svg);
+        }
+    }
+
+    #navigation-state:checked ~ .navigation {
+        height: 100%;
+        background: rgba(255,255,255,1);
+        transition: height .5s var(--cubic) .1s, background .3s ease-out .0s, backdrop-filter 0s .3s;
+    }
+
+    #navigation-state:checked ~ .navigation .menu-container {
+        transition: transform .3806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1s;
+    }
+    #navigation-state:checked ~ .navigation .menu-line {
+        transition: transform .3806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .37s;
+    }
+    #navigation-state:checked ~ .navigation .menu-line-item {
+        transition: transform .3806s cubic-bezier(0.04, 0.04, 0.12, 0.96) .37s;
+    }
+
+    #navigation-state:checked ~ .navigation .menu-container{
+        transform: rotate(90deg);
+    }
+    #navigation-state:checked ~ .navigation .menu-line-top{
+        transform: rotate(45deg);
+    }
+    #navigation-state:checked ~ .navigation .menu-line-item-top{
+        transform: translateY(3.95px);
+    }
+    #navigation-state:checked ~ .navigation .menu-line-bottom {
+        transform: rotate(-45deg);
+    }
+    #navigation-state:checked ~ .navigation .menu-line-item-bottom{
+        transform: translateY(-3.95px);
+    }
+
+
+    @media (max-width: 1065px) {
+
+        #navigation-state:checked ~ .navigation .menu-line-item-top{
+            transform: translateY(4.85px);
+        }
+        #navigation-state:checked ~ .navigation .menu-line-item-bottom{
+            transform: translateY(-4.85px);
+        }
+    }
+
+
+
+    .navigation-list{
+        list-style: none;
+        padding: 104px 52px 8px;
+        /*max-width: 664px;*/
+        margin: 0 auto;
+        z-index: 20;
+        overflow-y: auto;
+        position: absolute;
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    @media (min-width: 1065px) {
+        .navigation-list{
+            padding: 104px 136px 8px;
+        }
+    }
+
+    .navigation-list-item{
+        opacity: 0;
+        transform: scale(1.15) translateY(-30px);
+        transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+
+
+    #navigation-state:checked ~ .navigation .navigation-list-item {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    .navigation-list-item:last-child{
+        border-bottom: none;
+    }
+
+
+    .navigation-list-link, .navigation-list-header{
+        display: inline-block;
+        line-height: 1;
+        align-items: center;
+        height: 100%;
+        width: auto;
+        font-size: 17px;
+        letter-spacing: -.022em;
+        opacity: 1;
+        transition: opacity .3s ease-out, transform .3s ease-out;
+        -webkit-tap-highlight-color: transparent;
+        text-decoration: none;
+        white-space: nowrap;
+        outline-offset: 0;
+        background-position: left center;
+        background-repeat: no-repeat;
+    }
+    .navigation-list-link.text-hover-motion{
+        transition: opacity .3s ease-out, transform .3s ease-out;
+    }
+    .navigation-list-header{
+        opacity: 1;
+
+    }
+    .navigation-list-link:hover{
+        opacity: 1;
+    }
+
+
+    @media only screen and (min-width: 1065px) {
+        #navigation-state:checked ~ .navigation {
+            backdrop-filter: none;
+        }
+        .navigation-item.left {
+            left: 19px;
+        }
+        .navigation-item.right {
+            right: 19px;
+        }
+        .navigation-list{
+            max-width: 100%;
+        }
+        .navigation-list-item{
+            max-width: 400px;
+            border: none;
+        }
+        .navigation-list-header{
+            font-size: 19px;
+        }
+
+    }
+
+
+
+
+
+    :root{
+        --icon-left: 45px;
+    }
+    .navigation-list-link{
+        position: relative;
+        background-position: var(--icon-left) center;
+    }
+
+
+    .navigation{
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    @media only screen and (max-width: 735px){
+
+        /*.navigation-list {
+            padding: 4px 40px 8px;
+        }*/
+        .navigation-list-link:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: .5px;
+            background: rgba(235,235,245,.24);
+            left: var(--icon-left);
+            bottom: 0;
+        }
+        .navigation-list-item:last-child .navigation-list-link:after {
+            display: none;
+        }
+    }
+
+
+    .navigation-list-item.dir .navigation-list-link:after {
+        display: none;
+    }
+
+
+
+    .navigation-list-item.dir .navigation-list-link {
+        background-position: left center;
+    }
+    .navigation-list-item.dir .navigation-list-link {
+        opacity: 1;
+    }
+
+    .navigation-list-item.dir .navigation-list-link.active, .navigation-list-item.dir .navigation-list-link:hover {
+        opacity: 1;
+    }
+
+    .navigation-list-item.margin-contact {
+        margin-bottom: 16px;
+    }
+
+
+    .navigation-list-link {
+        background: none;
+    }
+
+    @media (min-width: 1065px) {
+        .navigation-list-link {
+            display: inline-block;
+        }
+
+        .navigation, .navigation-item, .navigation-item-link {
+            height: 44px;
+        }
+        .navigation-menu {
+            width: 44px;
+            height: 44px;
+        }
+        .menu-container {
+            top: 7px;
+            left: 7px;
+        }
+        .navigation-item-link.leonbakadorov {
+            background-image: url(/css/nav/leonbakadorov-large_black.svg);
+            background-size: 212px 44px;
+            width: 212px;
+        }
+        .navigation-item-link.lb {
+
+            background-image: url(/css/nav/lb-large_black.svg);
+            background-size: 44px 44px;
+            width: 44px;
+        }
+    }
+
+    .navigation-link-text{
+
+        transition: opacity 200ms ease;
+        display: inline-block;
+        position: relative;
+        color: #000;
+        letter-spacing: -.01em;
+        text-decoration: none;
+        font-size: 46px;
+        line-height: 1;
+        width: 100%;
+    }
+
+
+
+</style>
+<input type="checkbox" id="navigation-state" aria-hidden="true">
+<nav class="navigation start">
+    <ul class="navigation-header">
+        <li class="navigation-item left">
+            <label class="navigation-menu" for="navigation-state">
+                <div class="menu-container">
+                    <span class="menu-line menu-line-top">
+                        <span class="menu-line-item menu-line-item-top"></span>
+                    </span>
+                    <span class="menu-line menu-line-bottom">
+                        <span class="menu-line-item menu-line-item-bottom"></span>
+                    </span>
+                </div>
+            </label>
+        </li>
+        <li class="navigation-item center">
+            <a class="navigation-item-link leonbakadorov" href="/">
+                <span class="navigation-text">Леон Бакадоров ЛБ, Leon&nbsp;Bakadorov&nbsp;LB</span>
+            </a>
+        </li>
+        <li class="navigation-item right">
+            <a class="navigation-item-link lb" href="/" onclick="javascript:void(0)">
+                <span class="navigation-text">ЛБ, LB</span>
+            </a>
+        </li>
+    </ul>
+
+
+
+    <style>
+
+
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(2) {
+            transition-delay: 0.24s;
+        }
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(3) {
+            transition-delay: 0.28s;
+        }
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(4) {
+            transition-delay: 0.32s;
+        }
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(5) {
+            transition-delay: 0.36s;
+        }
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(6) {
+            transition-delay: 0.40s;
+        }
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(7) {
+            transition-delay: 0.44s;
+        }
+        #navigation-state:checked ~ .navigation .navigation-list-item:nth-child(8) {
+            transition-delay: 0.48s;
+        }
+
+
+        .navigation-list-item:nth-child(8) {
+            transition-delay: 0.05s;
+        }
+        .navigation-list-item:nth-child(7) {
+            transition-delay: 0.1s;
+        }
+        .navigation-list-item:nth-child(6) {
+            transition-delay: 0.15s;
+        }
+        .navigation-list-item:nth-child(5) {
+            transition-delay: 0.2s;
+        }
+        .navigation-list-item:nth-child(4) {
+            transition-delay: 0.25s;
+        }
+        .navigation-list-item:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+        .navigation-list-item:nth-child(2) {
+            transition-delay: 0.35s;
+        }
+        .navigation-list-item:nth-child(1) {
+            transition-delay: 0.4s;
+        }    </style>
+
+
+    <ul class="navigation-list">
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/order/">
+                <span class="navigation-link-text">Заказать</span>
+            </a>
+        </li>
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/website/">
+                <span class="navigation-link-text">Веб-сайт</span>
+            </a>
+        </li>
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/branding/">
+                <span class="navigation-link-text">Брендинг</span>
+            </a>
+        </li>
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/application/">
+                <span class="navigation-link-text">Приложение</span>
+            </a>
+        </li>
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/advancement/">
+                <span class="navigation-link-text">Продвижение</span>
+            </a>
+        </li>
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/product-ux-ui/">
+                <span class="navigation-link-text">Product UX/UI</span>
+            </a>
+        </li>
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/publications/">
+                <span class="navigation-link-text">Публикации</span>
+            </a>
+        </li>
+
+        <li class="navigation-list-item dir">
+            <a class="navigation-list-link text-hover-motion " href="/contact/">
+                <span class="navigation-link-text">Контакты</span>
+            </a>
+        </li>
+
+
+    </ul>
+    <!--<div class="navigation-background"></div>-->
+</nav>
+
+<script>
+
+    /*window.addEventListener('scroll', function () {
+        if(window.pageYOffset > 0){
+            document.querySelector('.navigation').classList.add('brilliant');
+        } else {
+            document.querySelector('.navigation').classList.remove('brilliant');
+        }
+    });*/
+
+
+    var textHoverMotion = document.querySelectorAll('.text-hover-motion');
+
+    textHoverMotion.forEach(function(e){
+
+        function touchMove(e, event){
+            let mouseCoord = {
+                x: event.offsetX,
+                y: event.offsetY
+            };
+
+            let cardWidth = e.clientWidth,
+                cardHeight = e.clientHeight;
+
+            mouseCoord.x = mouseCoord.x < 0 ? 0 : mouseCoord.x;
+            mouseCoord.x = mouseCoord.x > cardWidth ? cardWidth : mouseCoord.x;
+            mouseCoord.y = mouseCoord.y < 0 ? 0 : mouseCoord.y;
+            mouseCoord.y = mouseCoord.y > cardHeight ? cardHeight : mouseCoord.y;
+
+            //----------------------------------
+
+            let transformCard = "scale3d(1.05, 1.05, 1.05) perspective(700px)";
+            transformCard += " ";
+            //rotateX between -9 and +9
+            transformCard += "rotateX(" + ( ( ( (mouseCoord.y / cardHeight) * 18 ) - 9 )) + "deg)";
+            transformCard += " ";
+            //rotateY between -13 and +13
+            transformCard += "rotateY(" + ( ( ( (mouseCoord.x / cardWidth) * 26 ) - 13 ) * -1 ) + "deg)";
+
+            transformCard += " ";
+            //translateX between -3 and +3
+            transformCard += "translateX(" + ( ( (mouseCoord.x / cardWidth) * 6 ) - 3 ) + "px)";
+            transformCard += " ";
+            //translateY between -5 and +5
+            transformCard += "translateY(" + ( ( (mouseCoord.y / cardHeight) * 10 ) - 5 ) + "px)";
+
+            e.style.transform = transformCard;
+
+        }
+
+        function touchMoveEnd(e, event){
+            e.style.transform = " scale3d(1, 1, 1)";
+        }
+
+        e.addEventListener('mousemove', function(event){
+
+            e.classList.add('focus');
+            if(document.documentElement.clientWidth > 735){
+                touchMove(e, event);
+            }
+
+            e.addEventListener('mouseleave', function(event) {
+                e.classList.remove('focus');
+                if(document.documentElement.clientWidth > 735){
+                    touchMoveEnd(e, event);
+                }
+
+            });
+        });
+
+
+
+        e.addEventListener('touchstart', function(event){
+            e.classList.add('focus');
+
+        });
+        e.addEventListener('touchend', function(event) {
+            e.classList.remove('focus');
+        });
+
+    });
+</script>
+
+<style>
+
+    html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .discover {
+        position: absolute;
+        top: 68px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto 52px;
+        box-sizing: border-box;
+    }
+    @media (max-width: 735px) {
+        .discover {
+            display: none;
+        }
+    }
+    .discover-link {
+        text-decoration: none;
+        padding: 12px;
+        line-height: 1;
+        font-size: 14px;
+        letter-spacing: .015em;
+        color: #5A5A5C;
+        white-space: nowrap;
+        opacity: .48;
+        transition: opacity .32s cubic-bezier(.4,0,.6,1);
+    }
+    .discover-link.cta {
+        opacity: .8;
+        color: #0088FF;
+    }
+    .discover-link:hover {
+        opacity: 1;
+    }
+
+</style>
+
+<nav class="discover">
+    <a href="/order/" class="discover-link cta">Заказать</a>
+    <a href="/website/" class="discover-link">Веб-сайт</a>
+    <a href="/branding/" class="discover-link">Брендинг</a>
+    <a href="/application/" class="discover-link">Приложение</a>
+    <a href="/advancement/" class="discover-link">Продвижение</a>
+    <a href="/product-ux-ui/" class="discover-link">Product UX/UI</a>
+    <a href="/publications/" class="discover-link">Публикации</a>
+    <a href="/contact/" class="discover-link">Контакты</a>
+</nav>
+
+<style>
+    @font-face {
+        font-family:'Leon Bakadorov Sans';
+        src: url('/css/font/leon-bakadorov-sans.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body, section, div, h1, h2, h3, h4, p, a, ul, ol, li, span, dt, dd, input, textarea, select, button {
+        font-family: "Leon Bakadorov Sans", "Pro Icons", "-apple-system", BlinkMacSystemFont, "-webkit-system-font", "Malgun Gothic", "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: 500;
+        font-synthesis: none;
+        font-feature-settings: "kern";
+        -moz-font-feature-settings: "kern";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 12px;
+        box-sizing: border-box;
+    }
+    .headline {
+        font-size: 46px;
+        line-height: 1.125;
+        text-align: center;
+        max-width: 576px;
+        padding: 40px;
+    }
+    .cta-home {
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 100px;
+        background-color: #0088FF;
+        font-size: 17px;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    @media (max-width: 1065px) {
+        .cta-home {
+            font-size: 19px;
+        }
+    }
+</style>
+
+<h1 class="headline">Контакты для связи</h1>
+<a href="mailto:hello@leonbakadorov.com" class="cta-home">hello@leonbakadorov.com</a>
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@id": "https://www.leonbakadorov.com/#organization",
+        "@type": "Organization",
+        "name": "Leon Bakadorov LB",
+        "url": "https://www.leonbakadorov.com/",
+        "logo": "https://www.leonbakadorov.com/img/logotype-leonbakadorov.png",
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+7-911-020-1030",
+                "email": "hello@leonbakadorov.com",
+                "contactType": "sales",
+                "areaServed": "RU"
+            }
+        ],
+        "sameAs": [
+            "https://www.youtube.com/leonbakadorov",
+            "https://www.facebook.com/leonbakadorov",
+            "https://www.twitter.com/leonbakadorov"
+        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Leon Bakadorov LB",
+            "item": "https://www.leonbakadorov.com/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Контактная информация"
+        }]
+    }
+</script>
+</body>
+</html>
